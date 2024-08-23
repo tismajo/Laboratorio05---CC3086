@@ -5,7 +5,9 @@
 
 int main() {
     #define n 10
+    double start_time, end_time;
 
+    start_time = omp_get_wtime();
     #pragma omp parallel sections
     {
         // Factorial
@@ -58,5 +60,7 @@ int main() {
             printf(" y su numero mas grande es: %d\n", greaterNum);
         }
     }
+    end_time = omp_get_wtime();
+
     return 0;
 }
